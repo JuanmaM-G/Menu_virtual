@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/nav&fot.css') }}">
+</head>
+<body>
+    <footer class="footer">
+  <!-- Columna 1: Información de contacto -->
+  <div class="footer-section contacto">
+    <h3>Contacto</h3>
+    <p>Teléfono: +57 300 123 4567</p>
+    <p>Email: info@restaurante.com</p>
+    <p>Dirección: Calle 123, Bogotá</p>
+  </div>
+
+  <!-- Columna 2: Mapa -->
+  <div class="footer-section mapa">
+    <h3>Ubicación</h3>
+    <iframe 
+      src="https://www.google.com/maps?q=plaza+imperial+suba&output=embed" 
+      width="100%" 
+      height="200" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- Columna 3: Bienvenidos -->
+  <div class="footer-section bienvenidos">
+    <h3>Bienvenidos</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+</footer>
+
+</body>
+</html>

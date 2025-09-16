@@ -1,0 +1,155 @@
+/* ===========================
+   NAVBAR
+   =========================== */
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+  background-color: #222;
+  color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer iframe {
+  border-radius: 8px;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+/* ===========================
+   Imagenes navbar
+   =========================== */
+
+/* ===========================
+   HEADER TOP (Logo 25% / Imagen 75%)
+   =========================== */
+.header-top {
+  display: flex;
+  width: 100%;
+  height: 180px;           /* ajusta la altura según necesites */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* --- Logo (25%) --- */
+.header-top .logo {
+  flex: 0 0 25%;          /* fija 25% del ancho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: transparent;
+}
+
+.header-top .logo img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;    /* evita deformar el logo */
+  display: block;
+  border-radius: 6px;     /* opcional */
+}
+
+/* --- Imagen derecha (75%) --- */
+.header-top .header-image {
+  flex: 1 0 75%;          /* ocupa el resto (75%) */
+  min-height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.header-top .header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cubre el área sin deformar */
+  display: block;
+}
+
+/* ===========================
+   RESPONSIVE: apilar en móvil
+   =========================== */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    height: auto;         /* deja que el contenido defina la altura */
+  }
+
+  .header-top .logo,
+  .header-top .header-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .header-top .logo {
+    padding: 14px 10px;
+  }
+
+  .header-top .logo img {
+    max-width: 60%;       /* logo más pequeño en móvil */
+  }
+
+  .header-top .header-image img {
+    height: 200px;        /* altura del banner en móvil */
+    object-fit: cover;
+  }
+}
+
+/* ===========================
+   OPCIONAL: hacer el header "sticky"
+   (descomenta si lo quieres fijo arriba)
+   =========================== */
+/*
+.header-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+*/
