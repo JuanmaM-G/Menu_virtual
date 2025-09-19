@@ -14,6 +14,18 @@ def navbar():
 @app.route('/footer')
 def footer():
     return render_template ('footer.html')
+
+@app.route('/primer')
+def primer():
+    return render_template ('primer.html')
+
+@app.route('/segundo')
+def segundo():
+    return render_template ('segundo.html')
+
+@app.route('/tercero')
+def tercero():
+    return render_template ('tercero.html')
 # ------------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True)
