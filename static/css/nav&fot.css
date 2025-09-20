@@ -1,91 +1,32 @@
 /* ===========================
-   NAVBAR
+   FUENTES GENERALES
    =========================== */
-nav {
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 14px 20px;
-  display: block;
-}
-
-nav a:hover {
-  background-color: #575757;
-}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 /* ===========================
-   FOOTER
+   NAVBAR (header + enlaces)
    =========================== */
-.footer {
-  background-color: #222;
-  color: #ddd;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  flex-wrap: wrap;
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.footer-section {
-  flex: 1;
-  margin: 10px;
-}
-
-.footer h3 {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.footer p {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.footer iframe {
-  border-radius: 8px;
-}
-
-/* ===========================
-   RESPONSIVE
-   =========================== */
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-section {
-    margin-bottom: 20px;
-  }
-}
-
-/* ===========================
-   Imagenes navbar
-   =========================== */
-
-/* ===========================
-   HEADER TOP (Logo 25% / Imagen 75%)
-   =========================== */
+/* Header superior con isotipo y logotipo */
 .header-top {
   display: flex;
   width: 100%;
-  height: 180px;           /* ajusta la altura según necesites */
+  height: 180px;
   box-sizing: border-box;
-  overflow: hidden;
+  background-color: #E35110; /* color principal */
 }
 
-/* --- Logo (25%) --- */
+/* --- Isotipo (25%) --- */
 .header-top .logo {
-  flex: 0 0 25%;          /* fija 25% del ancho */
+  flex: 0 0 25%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  background: transparent;
 }
 
 .header-top .logo img {
@@ -93,63 +34,82 @@ nav a:hover {
   max-height: 90%;
   width: auto;
   height: auto;
-  object-fit: contain;    /* evita deformar el logo */
+  object-fit: contain;
   display: block;
-  border-radius: 6px;     /* opcional */
 }
 
-/* --- Imagen derecha (75%) --- */
+/* --- Logotipo (75%) --- */
 .header-top .header-image {
-  flex: 1 0 75%;          /* ocupa el resto (75%) */
-  min-height: 100%;
-  overflow: hidden;
-  display: block;
+  flex: 1 0 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px; /* espacio entre isotipo y logotipo */
 }
 
 .header-top .header-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* cubre el área sin deformar */
+  object-fit: cover;
   display: block;
 }
 
-/* ===========================
-   RESPONSIVE: apilar en móvil
-   =========================== */
-@media (max-width: 768px) {
-  .header-top {
-    flex-direction: column;
-    height: auto;         /* deja que el contenido defina la altura */
-  }
+/* Navbar principal */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #E35110; /* mismo color que header */
+  font-family: 'Josefin Sans', sans-serif;
+}
 
-  .header-top .logo,
-  .header-top .header-image {
-    flex: none;
-    width: 100%;
-  }
+nav a {
+  color: #F2BA5C; /* color complementario */
+  text-decoration: none;
+  padding: 14px 20px;
+  font-weight: 600;
+}
 
-  .header-top .logo {
-    padding: 14px 10px;
-  }
-
-  .header-top .logo img {
-    max-width: 60%;       /* logo más pequeño en móvil */
-  }
-
-  .header-top .header-image img {
-    height: 200px;        /* altura del banner en móvil */
-    object-fit: cover;
-  }
+nav a:hover {
+  background-color: #B71600; /* hover color complementario */
+  color: #fff;
 }
 
 /* ===========================
-   OPCIONAL: hacer el header "sticky"
-   (descomenta si lo quieres fijo arriba)
+   FOOTER
    =========================== */
-/*
-.header-top {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4D1B00; /* color principal oscuro */
+  color: #F2BA5C; /* texto claro */
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 20px;
 }
-*/
+
+/* Columnas del footer */
+.footer-section {
+  flex: 1;
+  box-sizing: border-box; /* evita márgenes internos extras */
+  padding: 0 10px; /* separa columnas entre sí */
+}
+
+/* Títulos en footer */
+.footer h3 {
+  color: #E35110;
+  font-family: 'ChunkFiveEx', serif;
+  margin-bottom: 10px;
+}
+
+/* Párrafos en footer */
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Iframe mapa */
+.footer iframe {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  border: 0;
+}

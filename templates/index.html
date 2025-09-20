@@ -10,22 +10,24 @@
 
     <div><h1>Primer modelo de menu</h1>
     <hr>
-    <p>Este es un modelo de menu <a href=""></a></p>
+    <p>Este es un modelo de menu <a href="{{ url_for('primer') }}">Primer modelo</a></p>
+    
+
     </div>
     <br>
 
     <div><h1>Segundo modelo de menu</h1>
     <hr>
-    <p>Este es un modelo de menu <a href=""></a></p>
+    <p>Este es un modelo de menu <a href="{{ url_for('segundo') }}">Segundo modelo</a></p>
     </div>
     <br>
 
     <div><h1>Tercero modelo de menu</h1>
     <hr>
-    <p>Este es un modelo de menu <a href=""></a></p>
+    <p>Este es un modelo de menu <a href="{{ url_for ('tercero') }}">Tercer modelo</a></p>
     </div>
     <br>
-    
+
     {% include 'footer.html' %}
 </body>
 </html>

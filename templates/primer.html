@@ -1,17 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primer modelo</title>
+    <title>Primer Modelo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/primer.css') }}">
 </head>
 <body>
-    {% incluide ' navbar.html '%}
-    <hr>
+    {% include 'navbar.html' %}
 
+    <!-- Hero o encabezado del menú -->
+    <div class="hero">
+        <h1>Menú del Restaurante</h1>
+        <p>¡Descubre nuestras delicias!</p>
+    </div>
 
-    
-    <hr>
-    {% incluide ' footer.html ' %}
+    <!-- Arepas -->
+    <section class="menu-section arepas">
+        <h2>Arepas</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Arepa rellena mixta</h3>
+                <p>Carne y pollo</p>
+            </div>
+            <span class="price">$14.500</span>
+        </div>
+        <div class="menu-item">
+            <div>
+                <h3>Arepa super quesuda</h3>
+                <p>Doble queso</p>
+            </div>
+            <span class="price">$6.200</span>
+        </div>
+        <div class="menu-item">
+            <div>
+                <h3>Arepa paisa con jamón y queso</h3>
+                <p>Jamón y queso</p>
+            </div>
+            <span class="price">$3.500</span>
+        </div>
+    </section>
+
+    <!-- Combos -->
+    <section class="menu-section combos">
+        <h2>Combos</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Super combo + bebida</h3>
+                <p>Chicharrón, chorizo, arepa paisa, arepa quesuda</p>
+            </div>
+            <span class="price">$20.700</span>
+        </div>
+        <div class="menu-item">
+            <div>
+                <h3>Combo trío + bebida</h3>
+                <p>Jamón, queso y huevo</p>
+            </div>
+            <span class="price">$7.900</span>
+        </div>
+        <div class="menu-item">
+            <div>
+                <h3>Combo hamburguesa + gaseosa</h3>
+                <p>100% carne de res, arepa paisa, queso, lechuga, tomate, cebolla grille y salsas de la casa</p>
+            </div>
+            <span class="price">$16.900</span>
+        </div>
+    </section>
+
+    <!-- Adiciones -->
+    <section class="menu-section adiciones">
+        <h2>Adiciones</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Chicharrón solo</h3>
+            </div>
+            <span class="price">$9.800</span>
+        </div>
+        <div class="menu-item">
+            <div>
+                <h3>Adición queso</h3>
+            </div>
+            <span class="price">$1.500</span>
+        </div>
+        <div class="menu-item">
+            <div>
+                <h3>Chocolate</h3>
+            </div>
+            <span class="price">$2.900</span>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
 </body>
 </html>

@@ -1,0 +1,101 @@
+/* === Fuentes === */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+/* === Estilos generales === */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2BA5C;
+    color: #4D1B00;
+}
+
+/* Hero / encabezado del menú */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #E35110;
+    color: #F2BA5C;
+}
+
+.hero h1 {
+    font-family: 'ChunkFiveEx', serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-family: 'Aliens and Cows', cursive;
+    font-size: 1.5rem;
+}
+
+/* Contenedor de secciones */
+.menu-section {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff7f0;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Títulos de sección */
+.menu-section h2 {
+    font-family: 'Aliens and Cows', cursive;
+    font-size: 2rem;
+    color: #E35110;
+    border-bottom: 3px solid #B71600;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Items de menú */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #6B2100;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+    background-color: #F7B03E;
+    color: #4D1B00;
+    border-radius: 8px;
+}
+
+/* Nombres y descripciones */
+.menu-item h3 {
+    font-family: 'ChunkFiveEx', serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.menu-item p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #4D1B00;
+}
+
+/* Precios */
+.price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #B71600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #4D1B00;
+    color: #F2BA5C;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 40px;
+}
