@@ -1,0 +1,70 @@
+/* ===========================
+   FUENTES GENERALES
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2BA5C; /* color principal suave */
+    color: #4D1B00; /* color principal oscuro */
+}
+
+/* ===========================
+   HERO / ENCABEZADO DE MODELOS
+   =========================== */
+h1 {
+    font-family: 'ChunkFiveEx', serif;
+    font-size: 2.5rem;
+    color: #E35110; /* color principal */
+    text-align: center;
+    margin-top: 40px;
+}
+
+hr {
+    width: 50%;
+    border: 2px solid #B71600; /* color complementario */
+    margin: 10px auto 20px auto;
+}
+
+/* ===========================
+   CONTENEDORES DE MODELOS
+   =========================== */
+div {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #4D1B00;
+}
+
+a {
+    color: #B71600; /* color complementario fuerte */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #E35110;
+    text-decoration: underline;
+}
+
+/* ===========================
+   FORMULARIO
+   =========================== */
+form#foru {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===========================
+   MARGEN Y ESPACIADO GENERAL
+   =========================== */
+body > div, form > div {
+    padding: 10px 20px;
+}

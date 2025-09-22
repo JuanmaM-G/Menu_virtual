@@ -8,30 +8,31 @@
    =========================== */
 body {
   font-family: 'Josefin Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0%;
+  padding: 0%;
 }
 
 /* Header superior con isotipo y logotipo */
 .header-top {
   display: flex;
   width: 100%;
-  height: 180px;
+  height: auto;
+  margin: none;
+  padding: none;
   box-sizing: border-box;
   background-color: #E35110; /* color principal */
 }
 
 /* --- Isotipo (25%) --- */
 .header-top .logo {
-  flex: 0 0 25%;
+  flex: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .header-top .logo img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -40,11 +41,11 @@ body {
 
 /* --- Logotipo (75%) --- */
 .header-top .header-image {
-  flex: 1 0 75%;
+  flex:100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 15px; /* espacio entre isotipo y logotipo */
+
 }
 
 .header-top .header-image img {
@@ -74,23 +75,50 @@ nav a:hover {
   color: #fff;
 }
 
-/* ===========================
-   FOOTER
+  /* ===========================
+   FOOTER (3 columnas)
    =========================== */
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #4D1B00; /* color principal oscuro */
   color: #F2BA5C; /* texto claro */
   font-family: 'Josefin Sans', sans-serif;
   padding: 20px;
+  gap: 20px; /* separación entre columnas */
 }
 
-/* Columnas del footer */
-.footer-section {
-  flex: 1;
-  box-sizing: border-box; /* evita márgenes internos extras */
-  padding: 0 10px; /* separa columnas entre sí */
+/* --- Columna 1: Isotipo --- */
+.isotipo {
+  flex: 0 0 20%;
+  height: auto  ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.isotipo img {
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* --- Columna 2: Mapa --- */
+.footer-section.mapa {
+  flex: 1; /* ocupa espacio central */
+}
+
+.footer iframe {
+  border-radius: 8px;
+  width: 80%;
+  height: 170px;
+  border: 0;
+}
+
+/* --- Columna 3: Contacto --- */
+.footer-section.contacto {
+  flex: 0 0 25%; /* ancho fijo para info de contacto */
 }
 
 /* Títulos en footer */
@@ -104,12 +132,4 @@ nav a:hover {
 .footer p {
   font-size: 14px;
   line-height: 1.6;
-}
-
-/* Iframe mapa */
-.footer iframe {
-  border-radius: 8px;
-  width: 100%;
-  height: 200px;
-  border: 0;
 }

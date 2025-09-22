@@ -1,101 +1,109 @@
-/* === Fuentes === */
+/* ===========================
+   FUENTES GENERALES
+   =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
-/* === Estilos generales === */
+/* ===========================
+   BODY
+   =========================== */
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F2BA5C;
-    color: #4D1B00;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F2BA5C;
+  color: #4D1B00; /* color principal oscuro */
 }
 
-/* Hero / encabezado del menú */
+/* ===========================
+   HERO / ENCABEZADO
+   =========================== */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: #E35110;
-    color: #F2BA5C;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #E35110; /* color principal */
+  color: #F2BA5C; /* color complementario claro */
 }
 
 .hero h1 {
-    font-family: 'ChunkFiveEx', serif;
-    font-size: 3rem;
-    margin-bottom: 15px;
+  font-family: 'ChunkFiveEx', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .hero p {
-    font-family: 'Aliens and Cows', cursive;
-    font-size: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
 }
 
-/* Contenedor de secciones */
+/* ===========================
+   SECCIONES DEL MENÚ
+   =========================== */
 .menu-section {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff7f0;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 40px 20px;
+  background-color: #F7B03E  ;
 }
 
-/* Títulos de sección */
 .menu-section h2 {
-    font-family: 'Aliens and Cows', cursive;
-    font-size: 2rem;
-    color: #E35110;
-    border-bottom: 3px solid #B71600;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+  font-family: 'ChunkFiveEx', serif;
+  color: #4D1B00; /* color principal oscuro */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-/* Items de menú */
+/* ===========================
+   GRID DE ITEMS
+   =========================== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+/* ===========================
+   TARJETA / ITEM
+   =========================== */
 .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px dashed #6B2100;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.menu-item:last-child {
-    border-bottom: none;
+  background-color: #F2BA5C ; /* color complementario suave */
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .menu-item:hover {
-    transform: scale(1.02);
-    background-color: #F7B03E;
-    color: #4D1B00;
-    border-radius: 8px;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Nombres y descripciones */
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 .menu-item h3 {
-    font-family: 'ChunkFiveEx', serif;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+  font-family: 'aliens and Cows', cursive;
+  font-size: 1.5rem;
+  margin: 10px 0 5px 0;
+  color: #4D1B00; /* principal oscuro */
 }
 
 .menu-item p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1rem;
-    color: #4D1B00;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+  color: #4D1B00; /* principal oscuro */
 }
 
-/* Precios */
-.price {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #B71600;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #4D1B00;
-    color: #F2BA5C;
-    font-family: 'Josefin Sans', sans-serif;
-    margin-top: 40px;
+.menu-item .price {
+  font-family: 'ChunkFiveEx', serif;
+  font-size: 1.2rem;
+  color: #B71600; /* complementario fuerte */
 }
