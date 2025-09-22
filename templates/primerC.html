@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/primer.css') }}"> -->
+</head>
+<body>
+    <body style="background-color: #F2BA5C; color: #4D1B00; font-family: 'Josefin Sans', sans-serif;">
+
+    {% include 'navbar.html' %}
+
+    <!-- Arepas -->
+    <section class="menu-section arepas" style="background-color: #E35110; padding: 30px; border-radius: 10px; margin: 20px;">
+        <h2 style="color: #F2BA5C; font-family: 'ChunkFiveEx', serif;">Arepas</h2>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Arepa rellena mixta</h3>
+                <p>Carne y pollo</p>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$14.500</span>
+        </div>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Arepa super quesuda</h3>
+                <p>Doble queso</p>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$6.200</span>
+        </div>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Arepa paisa con jamón y queso</h3>
+                <p>Jamón y queso</p>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$3.500</span>
+        </div>
+    </section>
+
+    <!-- Combos -->
+    <section class="menu-section combos" style="background-color: #E35110; padding: 30px; border-radius: 10px; margin: 20px;">
+        <h2 style="color: #F2BA5C; font-family: 'ChunkFiveEx', serif;">Combos</h2>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Super combo + bebida</h3>
+                <p>Chicharrón, chorizo, arepa paisa, arepa quesuda</p>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$20.700</span>
+        </div>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Combo trío + bebida</h3>
+                <p>Jamón, queso y huevo</p>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$7.900</span>
+        </div>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Combo hamburguesa + gaseosa</h3>
+                <p>100% carne de res, arepa paisa, queso, lechuga, tomate, cebolla grille y salsas de la casa</p>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$16.900</span>
+        </div>
+    </section>
+
+    <!-- Adiciones -->
+    <section class="menu-section adiciones" style="background-color: #E35110; padding: 30px; border-radius: 10px; margin: 20px;">
+        <h2 style="color: #F2BA5C; font-family: 'ChunkFiveEx', serif;">Adiciones</h2>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Chicharrón solo</h3>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$9.800</span>
+        </div>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Adición queso</h3>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$1.500</span>
+        </div>
+        <div class="menu-item" style="background-color: #F7B03E; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <div>
+                <h3 style="color: #4D1B00; font-family: 'aliens and Cows', cursive;">Chocolate</h3>
+            </div>
+            <span class="price" style="color: #B71600; font-family: 'ChunkFiveEx', serif;">$2.900</span>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+
+</body>
+</html>

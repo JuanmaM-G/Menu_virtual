@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Modelo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/primer.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Arepas -->
+    <section class="menu-section arepas" style="background-color: #E35110;">
+        <h2 style="color: #4D1B00;">Arepas</h2>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Arepa rellena mixta</h3>
+                <p style="color: #4D1B00;">Carne y pollo</p>
+            </div>
+            <span class="price" style="color: #6B2100;">$14.500</span>
+        </div>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Arepa super quesuda</h3>
+                <p style="color: #4D1B00;">Doble queso</p>
+            </div>
+            <span class="price" style="color: #6B2100;">$6.200</span>
+        </div>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Arepa paisa con jamón y queso</h3>
+                <p style="color: #4D1B00;">Jamón y queso</p>
+            </div>
+            <span class="price" style="color: #6B2100;">$3.500</span>
+        </div>
+    </section>
+
+    <!-- Combos -->
+    <section class="menu-section combos" style="background-color: #E35110;">
+        <h2 style="color: #4D1B00;">Combos</h2>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Super combo + bebida</h3>
+                <p style="color: #4D1B00;">Chicharrón, chorizo, arepa paisa, arepa quesuda</p>
+            </div>
+            <span class="price" style="color: #6B2100;">$20.700</span>
+        </div>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Combo trío + bebida</h3>
+                <p style="color: #4D1B00;">Jamón, queso y huevo</p>
+            </div>
+            <span class="price" style="color: #6B2100;">$7.900</span>
+        </div>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Combo hamburguesa + gaseosa</h3>
+                <p style="color: #4D1B00;">100% carne de res, arepa paisa, queso, lechuga, tomate, cebolla grille y salsas de la casa</p>
+            </div>
+            <span class="price" style="color: #6B2100;">$16.900</span>
+        </div>
+    </section>
+
+    <!-- Adiciones -->
+    <section class="menu-section adiciones" style="background-color: #E35110;">
+        <h2 style="color: #4D1B00;">Adiciones</h2>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Chicharrón solo</h3>
+            </div>
+            <span class="price" style="color: #6B2100;">$9.800</span>
+        </div>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Adición queso</h3>
+            </div>
+            <span class="price" style="color: #6B2100;">$1.500</span>
+        </div>
+        <div class="menu-item" style="background-color: #F2BA5C;">
+            <div>
+                <h3 style="color: #B71600;">Chocolate</h3>
+            </div>
+            <span class="price" style="color: #6B2100;">$2.900</span>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>
