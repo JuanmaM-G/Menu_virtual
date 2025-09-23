@@ -17,10 +17,11 @@ body {
   display: flex;
   width: 100%;
   height: auto;
+  padding: 50px;
   margin: none;
   padding: none;
   box-sizing: border-box;
-  background-color: #E35110; /* color principal */
+  background-color: #4D1B00; /* color principal */
 }
 
 /* --- Isotipo (25%) --- */

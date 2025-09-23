@@ -34,7 +34,7 @@ def primerCCC():
     return render_template ('primerCCC.html') 
 
 # -------------------------------------------------------------------------------
-
+# si 
 @app.route('/segundo')
 def segundo():
     return render_template ('segundo.html')
@@ -43,10 +43,12 @@ def segundo():
                 # ==== COLOMETRIA ====
 # -------------------------------------------------------------------------------
 
+# si 
 @app.route('/segundoC')
 def segundoC():
     return render_template ('segundoC.html')
 
+# si 
 @app.route('/segundoCC')
 def segundoCC():
     return render_template ('segundoCC.html')
@@ -63,6 +65,7 @@ def tercero():
 # -------------------------------------------------------------------------------
                 # ==== COLOMETRIA ====
 # -------------------------------------------------------------------------------
+# si 
 @app.route('/terceroC')
 def terceroC(): 
     return render_template ('terceroC.html')

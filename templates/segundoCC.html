@@ -7,30 +7,78 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/segundo.css') }}">
 </head>
 <body>
+    {% include 'navbar.html' %}
+
     <div class="menu-grid" style="background-color: #4D1B00; padding:40px 20px;">
 
     <!-- Arepas -->
+
+
+    
+
     <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
-        <img src="../static/img/arepa-modelo.png" alt="Arepa rellena mixta">
-        <h3 style="color:#E35110;">Arepa rellena mixta</h3>
-        <p style="color:#6B2100;">Carne y pollo</p>
-        <span class="price" style="color:#B71600;">$14.500</span>
+            <img src="../static/img/combo choclo.png" alt="Combo hamburguesa + gaseosa">
+            <h3 style="color:#E35110;" >Choclo</h3>
+            <p style="color:#6B2100;" >Arepa de choclo, Huevo y bebida</p>
+            <span class="price" style="color:#B71600;" >$16.900</span>
     </div>
 
     <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
-        <img src="../static/img/arepa-modelo.png" alt="Arepa super quesuda">
-        <h3 style="color:#E35110;">Arepa super quesuda</h3>
-        <p style="color:#6B2100;">Doble queso</p>
-        <span class="price" style="color:#B71600;">$6.200</span>
+            <img src="../static/img/combo arepa choclo.png" alt="Combo trío + bebida" style="width: 74%;">
+            <h3 style="color:#E35110;" >Arepa choclo</h3>
+            <p style="color:#6B2100;" >Arepa de choclo y bebida</p>
+            <span class="price" style="color:#B71600;" >$7.900</span>
     </div>
 
     <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
-        <img src="../static/img/arepa-modelo.png" alt="Arepa paisa con jamón y queso">
-        <h3 style="color:#E35110;">Arepa paisa con jamón y queso</h3>
-        <p style="color:#6B2100;">Jamón y queso</p>
-        <span class="price" style="color:#B71600;">$3.500</span>
+            <img src="../static/img/combo quesuda.png" alt="Super combo + bebida" style="width: 65%;">
+            <h3 style="color:#E35110;" >Quesuda</h3>
+            <p style="color:#6B2100;" >Arepa de queso, Huevo y bebida</p>
+            <span class="price" style="color:#B71600;" >$9.800</span>
+    </div>
+
+        <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
+            <img src="../static/img/combo choclo.png" alt="Combo hamburguesa + gaseosa">
+            <h3 style="color:#E35110;" >Choclo</h3>
+            <p style="color:#6B2100;" >Arepa de choclo, Huevo y bebida</p>
+            <span class="price" style="color:#B71600;" >$16.900</span>
+    </div>
+
+    <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
+            <img src="../static/img/combo arepa choclo.png" alt="Combo trío + bebida" style="width: 74%;">
+            <h3 style="color:#E35110;" >Arepa choclo</h3>
+            <p style="color:#6B2100;" >Arepa de choclo y bebida</p>
+            <span class="price" style="color:#B71600;" >$7.900</span>
+    </div>
+
+    <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
+            <img src="../static/img/combo quesuda.png" alt="Super combo + bebida" style="width: 65%;">
+            <h3 style="color:#E35110;" >Quesuda</h3>
+            <p style="color:#6B2100;" >Arepa de queso, Huevo y bebida</p>
+            <span class="price" style="color:#B71600;" >$9.800</span>
+    </div>
+
+        <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
+            <img src="../static/img/combo choclo.png" alt="Combo hamburguesa + gaseosa">
+            <h3 style="color:#E35110;" >Choclo</h3>
+            <p style="color:#6B2100;" >Arepa de choclo, Huevo y bebida</p>
+            <span class="price" style="color:#B71600;" >$16.900</span>
+    </div>
+
+    <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
+            <img src="../static/img/combo arepa choclo.png" alt="Combo trío + bebida" style="width: 74%;">
+            <h3 style="color:#E35110;" >Arepa choclo</h3>
+            <p style="color:#6B2100;" >Arepa de choclo y bebida</p>
+            <span class="price" style="color:#B71600;" >$7.900</span>
+    </div>
+
+    <div class="menu-item" style="background-color:#F7B03E; color:#4D1B00;">
+            <img src="../static/img/combo quesuda.png" alt="Super combo + bebida" style="width: 65%;">
+            <h3 style="color:#E35110;" >Quesuda</h3>
+            <p style="color:#6B2100;" >Arepa de queso, Huevo y bebida</p>
+            <span class="price" style="color:#B71600;" >$9.800</span>
     </div>
 </div>
-
+    {% include 'footer.html' %}
 </body>
 </html>
