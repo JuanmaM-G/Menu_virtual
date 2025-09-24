@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Item del Menú</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div id="menu-main">
+        <div id="menu-form-container">
+            <h1 id="menu-form-title">Actualizar Item del Menú</h1>
+
+            <form action="{{ url_for('actualizar_menu', menu_id=item.id) }}" method="POST" enctype="multipart/form-data">
+
+                
+                <!-- Título -->
+                <div class="form-group">
+                    <label class="form-label" for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" class="form-input" value="{{ item.titulo }}" required>
+                </div>
+
+                <!-- Descripción -->
+                <div class="form-group">
+                    <label class="form-label" for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" class="form-input" rows="3">{{ item.descripcion }}</textarea>
+                </div>
+
+                <!-- Precio -->
+                <div class="form-group">
+                    <label class="form-label" for="precio">Precio (COP)</label>
+                    <input type="number" id="precio" name="precio" class="form-input" step="0.01" min="0" value="{{ item.precio }}" required>
+                </div>
+
+                <!-- Categoría -->
+                <div class="form-group">
+                    <label class="form-label" for="categoria">Categoría</label>
+                    <select id="categoria" name="categoria" class="form-input" required>
+                        <option value="1" {% if item.categoria == 1 %}selected{% endif %}>Arepas</option>
+                        <option value="2" {% if item.categoria == 2 %}selected{% endif %}>Combos</option>
+                        <option value="3" {% if item.categoria == 3 %}selected{% endif %}>Adiciones</option>
+                    </select>
+                </div>
+
+                <!-- Imagen principal -->
+                <div class="form-group">
+                    <label class="form-label" for="imagen_principal">Imagen Principal</label>
+                    <input type="file" id="imagen_principal" name="imagen_principal" class="form-input-file" accept=".jpg,.jpeg,.png,.gif">
+                    <small>Imagen actual: {{ item.imagen }}</small>
+                </div>
+
+                <!-- Botones -->
+                <div class="form-buttons">
+                    <button type="submit" class="form-button">Actualizar Item</button>
+                    <a href="{{ url_for('mostrar_menu') }}" class="form-button back-button">Volver</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

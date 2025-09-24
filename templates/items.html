@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items del Menú</title>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    <hr><br><br><br>
+    <h1>Items del Menú</h1>
+
+    <div class="gallery-container">
+        {% for menu_item in menu %}
+        <div class="gallery-item"
+            data-id="{{ menu_item.id }}"
+            data-img="{{ url_for('static', filename='uploads/' + menu_item.imagen) }}"
+            data-title="{{ menu_item.titulo }}"
+            data-description="{{ menu_item.descripcion }}"
+            data-price="{{ menu_item.precio }}"
+            data-category="{{ menu_item.categoria }}">
+
+            <img src="{{ url_for('static', filename='uploads/' + menu_item.imagen) }}" alt="{{ menu_item.titulo }}">
+            <div class="overlay">
+                <p>{{ menu_item.titulo }}</p>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="item-buttons">
+                <a href="{{ url_for('actualizar_menu', menu_id=menu_item.id) }}" class="btn update-btn">Actualizar</a>
+
+                <form method="POST" action="{{ url_for('eliminar_menu', menu_id=menu_item.id) }}" style="display:inline;">
+                    <button type="submit" class="btn delete-btn"
+                        onclick="return confirm('¿Estás seguro de que quieres eliminar este item?')">Eliminar</button>
+                </form>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

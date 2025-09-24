@@ -1,0 +1,140 @@
+/* ===========================
+   FUENTES GENERALES
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+/* ===========================
+   BODY
+   =========================== */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2BA5C; /* color principal claro */
+    color: #4D1B00; /* color principal oscuro */
+}
+
+/* ===========================
+   CONTENEDOR DEL FORMULARIO
+   =========================== */
+#menu-main {
+    padding: 40px 20px;
+}
+
+#menu-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #F7B03E; /* color complementario suave */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   TÍTULO DEL FORMULARIO
+   =========================== */
+#menu-form-title {
+    font-family: 'ChunkFiveEx', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #E35110; /* color principal */
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   GRUPOS DE INPUT
+   =========================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form-label {
+    display: block;
+    font-family: 'aliens and Cows', cursive;
+    font-size: 1.2rem;
+    color: #4D1B00; /* color principal oscuro */
+    margin-bottom: 6px;
+}
+
+/* Inputs y textarea */
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #4D1B00;
+    border-radius: 6px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Select */
+.form-input select {
+    appearance: none;
+}
+
+/* Input tipo archivo */
+.form-input-file {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #4D1B00;
+    border-radius: 6px;
+    background-color: #F2BA5C; /* color principal claro */
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.form-input-file::file-selector-button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color: #F2BA5C;
+    background-color: #E35110;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-input-file::file-selector-button:hover {
+    background-color: #B71600;
+}
+
+/* ===========================
+   BOTONES
+   =========================== */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-button {
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+    font-family: 'ChunkFiveEx', serif;
+    font-size: 1.3rem;
+    color: #F2BA5C;
+    background-color: #E35110;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none; /* para el <a> de volver */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-button:hover {
+    background-color: #B71600;
+    transform: translateY(-2px);
+}
+
+.back-button {
+    background-color: #4D1B00;
+}
+
+.back-button:hover {
+    background-color: #6B2100;
+}
