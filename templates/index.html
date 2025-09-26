@@ -9,124 +9,66 @@
 <body>
     {% include 'navbar.html' %}
 
-    <div class="menu-grid">
+    <main class="menu-container">
 
-        <!-- ------------------------------------------------------------------------------
-                                        AREPAS
-         ------------------------------------------------------------------------------ -->
-        <div class="menu-item">
-            <img src="../static/img/arepa-modelo.png" alt="Arepa rellena mixta">
-            <h3>Arepa rellena mixta</h3>
-            <p>Carne y pollo</p>
-            <span class="price">$14.500</span>
+        <!-- AREPAS -->
+        <h2>Arepas</h2>
+        <div class="menu-grid">
+            {% for menu in arepas %}
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                <h3>{{ menu.titulo }}</h3>
+                <p>{{ menu.descripcion }}</p>
+                <span class="price">${{ "{:,}".format(menu.precio) }}</span>
+                <div class="menu-actions">
+                    <a href="{{ url_for('actualizar_menu', menu_id=menu.id) }}">Actualizar</a>
+                    <form action="{{ url_for('eliminar_menu', menu_id=menu.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
-        <div class="menu-item">
-            <img src="../static/img/arepa-modelo.png" alt="Arepa super quesuda">
-            <h3>Arepa super quesuda</h3>
-            <p>Doble queso</p>
-            <span class="price">$6.200</span>
+        <!-- COMBOS -->
+        <h2>Combos</h2>
+        <div class="menu-grid">
+            {% for menu in combos %}
+            <div class="menu-menu">
+                <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                <h3>{{ menu.titulo }}</h3>
+                <p>{{ menu.descripcion }}</p>
+                <span class="price">${{ "{:,}".format(menu.precio) }}</span>
+                <div class="menu-actions">
+                    <a href="{{ url_for('actualizar_menu', menu_id=menu.id) }}">Actualizar</a>
+                    <form action="{{ url_for('eliminar_menu', menu_id=menu.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
-        <div class="menu-item">
-            <img src="../static/img/arepa-modelo.png" alt="Arepa paisa con jamón y queso">
-            <h3>Arepa paisa con jamón y queso</h3>
-            <p>Jamón y queso</p>
-            <span class="price">$3.500</span>
+        <!-- ADICIONES -->
+        <h2>Adiciones</h2>
+        <div class="menu-grid">
+            {% for menu in adiciones %}
+            <div class="menu-menu">
+                <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                <h3>{{ menu.titulo }}</h3>
+                <p>{{ menu.descripcion }}</p>
+                <span class="price">${{ "{:,}".format(menu.precio) }}</span>
+                <div class="menu-actions">
+                    <a href="{{ url_for('actualizar_menu', menu_id=menu.id) }}">Actualizar</a>
+                    <form action="{{ url_for('eliminar_menu', menu_id=menu.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
-        <!-- ------------------------------------------------------------------------------
-                                        COMBOS
-         ------------------------------------------------------------------------------ -->
-        <div class="menu-item">
-            <img src="../static/img/combo quesuda.png" alt="Super combo + bebida" style="width: 90%;">
-            <h3>Quesuda</h3>
-            <p>Arepa de queso, Huevo y bebida</p>
-            <span class="price">$9.800</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/combo arepa choclo.png" alt="Combo trío + bebida" style="width: 95%;"  >
-            <h3>Arepa choclo</h3>
-            <p>Arepa de choclo y bebida</p>
-            <span class="price">$7.900</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/combo choclo.png" alt="Combo hamburguesa + gaseosa" style="width: 100%;" >
-            <h3>Choclo</h3>
-            <p>Arepa de choclo, Huevo y bebida</p>
-            <span class="price">$16.900</span>
-        </div>
-
-                <div class="menu-item">
-            <img src="../static/img/combo quesuda.png" alt="Super combo + bebida" style="width: 90%;">
-            <h3>Quesuda</h3>
-            <p>Arepa de queso, Huevo y bebida</p>
-            <span class="price">$9.800</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/combo arepa choclo.png" alt="Combo trío + bebida" style="width: 95%;"  >
-            <h3>Arepa choclo</h3>
-            <p>Arepa de choclo y bebida</p>
-            <span class="price">$7.900</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/combo choclo.png" alt="Combo hamburguesa + gaseosa" style="width: 100%;" >
-            <h3>Choclo</h3>
-            <p>Arepa de choclo, Huevo y bebida</p>
-            <span class="price">$16.900</span>
-        </div>
-
-                <div class="menu-item">
-            <img src="../static/img/combo quesuda.png" alt="Super combo + bebida" style="width: 90%;">
-            <h3>Quesuda</h3>
-            <p>Arepa de queso, Huevo y bebida</p>
-            <span class="price">$9.800</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/combo arepa choclo.png" alt="Combo trío + bebida" style="width: 95%;"  >
-            <h3>Arepa choclo</h3>
-            <p>Arepa de choclo y bebida</p>
-            <span class="price">$7.900</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/combo choclo.png" alt="Combo hamburguesa + gaseosa" style="width: 100%;" >
-            <h3>Choclo</h3>
-            <p>Arepa de choclo, Huevo y bebida</p>
-            <span class="price">$16.900</span>
-        </div>
-
-
-        <!-- ------------------------------------------------------------------------------
-                                        ADICIONES
-         ------------------------------------------------------------------------------ -->
-        <div class="menu-item">
-            <img src="../static/img/adiciones-modelo.jpg" alt="Chicharrón solo">
-            <h3>Chicharrón solo</h3>
-            <p></p>
-            <span class="price">$9.800</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/adiciones-modelo.jpg" alt="Adición queso">
-            <h3>Adición queso</h3>
-            <p></p>
-            <span class="price">$1.500</span>
-        </div>
-
-        <div class="menu-item">
-            <img src="../static/img/adiciones-modelo.jpg" alt="Chocolate">
-            <h3>Chocolate</h3>
-            <p></p>
-            <span class="price">$2.900</span>
-        </div>
-
-    </div>
+    </main>
 
     {% include 'footer.html' %}
 </body>
