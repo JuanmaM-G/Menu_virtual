@@ -1,0 +1,176 @@
+/* ===========================
+   FUENTES GENERALES
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ChunkFiveEx&display=swap');
+
+/* ===========================
+   BODY
+   =========================== */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #F2BA5C; /* color principal claro */
+    color: #4D1B00; /* color principal oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+/* ===========================
+   Contenedores (usuarios y formulario)
+   =========================== */
+.users-container,
+.form-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #F7B03E; /* color complementario suave */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   Títulos
+   =========================== */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'ChunkFiveEx', serif;
+    color: #E35110; /* color principal */
+}
+
+/* ===========================
+   Tabla de usuarios
+   =========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #4D1B00;
+    text-align: left;
+    background-color: #ffffff; /* color principal claro */
+    color: #4D1B00; /* texto principal */
+}
+
+table th {
+    background-color: #E35110; /* color principal */
+    color: #F2BA5C; /* texto claro */ 
+}
+
+/* Enlaces y botones dentro de la tabla */
+table a,
+table button {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+table a {
+    background-color: #4D1B00;
+    color: #F2BA5C;
+}
+
+table button {
+    background-color: #E35110;
+    color: #F2BA5C;
+}
+
+/* ===========================
+   Formulario de usuarios
+   =========================== */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    display: block;
+    font-family: 'aliens and Cows', cursive;
+    font-size: 1.1rem;
+    color: #4D1B00;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    padding: 10px 12px;
+    border: 1px solid #4D1B00;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    background-color: #ffffff; /* color principal claro */
+    color: #4D1B00;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+/* Botones del formulario */
+.form-container .form-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-container .form-buttons button,
+.form-container .form-buttons .back-button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'ChunkFiveEx', serif;
+    font-size: 1.1rem;
+    color: #F2BA5C;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-container .form-buttons button {
+    background-color: #E35110;
+}
+
+.form-container .form-buttons .back-button {
+    background-color: #4D1B00;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 768px) {
+    .users-container,
+    .form-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    table th,
+    table td {
+        padding: 8px 10px;
+    }
+
+    .form-container .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

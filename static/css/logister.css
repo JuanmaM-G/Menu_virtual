@@ -1,0 +1,89 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ChunkFiveEx&display=swap'); /* Títulos */
+@import url('https://fonts.googleapis.com/css2?family=Aliens+and+Cows&display=swap'); /* Subtítulos */
+
+/* Estilos generales */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #F2BA5C;
+    color: #4D1B00;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: #fff7f0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'ChunkFiveEx', serif;
+    color: #E35110;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4D1B00;
+    font-weight: 600;
+}
+
+/* Inputs y select */
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #4D1B00;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #4D1B00;
+}
+
+/* Botones */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #E35110;
+    color: #F2BA5C;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Aliens and Cows', cursive;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #B71600;
+}
+
+/* Botón de volver / links secundarios */
+.form-buttons a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #E35110;
+    font-family: 'Aliens and Cows', cursive;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.form-buttons a:hover {
+    color: #B71600;
+    text-decoration: underline;
+}

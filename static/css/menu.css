@@ -2,6 +2,8 @@
    FUENTES GENERALES
    =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ChunkFiveEx&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aliens+and+Cows&display=swap');
 
 /* ===========================
    BODY
@@ -35,7 +37,7 @@ body {
    =========================== */
 #menu-form-title {
     font-family: 'ChunkFiveEx', serif;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     text-align: center;
     color: #E35110; /* color principal */
     margin-bottom: 30px;
@@ -51,9 +53,9 @@ body {
 /* Labels */
 .form-label {
     display: block;
-    font-family: 'aliens and Cows', cursive;
+    font-family: 'Aliens and Cows', cursive;
     font-size: 1.2rem;
-    color: #4D1B00; /* color principal oscuro */
+    color: #4D1B00;
     margin-bottom: 6px;
 }
 
@@ -108,7 +110,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .form-button {

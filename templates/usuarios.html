@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/usuarios.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <main class="users-container">
+        <h1>Usuarios Registrados</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    {% if rol == 2 %}
+                    <th>Acciones</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.apellido }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>
+                        {% if usuario.rol == 1 %}
+                            Usuario
+                        {% elif usuario.rol == 2 %}
+                            Administrador
+                        {% else %}
+                            No registrado
+                        {% endif %}
+                    </td>
+                    {% if rol == 2 %}
+                    <td>
+                        <a href="{{ url_for('actualizar_usuario', usuario_id=usuario.id) }}">Actualizar</a>
+                        <form action="{{ url_for('eliminar_usuario', usuario_id=usuario.id) }}" method="POST" style="display:inline;">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

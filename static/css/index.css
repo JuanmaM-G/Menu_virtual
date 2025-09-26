@@ -1,5 +1,7 @@
 /* Fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ChunkFiveEx&display=swap'); /* Títulos */
+@import url('https://fonts.googleapis.com/css2?family=Aliens+and+Cows&display=swap'); /* Subtítulos */
 
 /* Estilos generales */
 body {
@@ -64,6 +66,36 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     color: #B71600;
+}
+
+/* Botones de acciones (Actualizar / Eliminar) */
+.menu-actions a,
+.menu-actions button {
+    background-color: #E35110;
+    color: #F2BA5C;
+    border: none;
+    padding: 6px 12px;
+    margin: 3px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Aliens and Cows', cursive;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu-actions a:hover,
+.menu-actions button:hover {
+    background-color: #B71600;
+}
+
+/* Encabezados de categorías */
+h2 {
+    font-family: 'Aliens and Cows', cursive;
+    font-size: 2rem;
+    color: #E35110;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 /* Footer */

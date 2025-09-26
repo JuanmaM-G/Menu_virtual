@@ -1,4 +1,4 @@
-from flask import Flask, flash, redirect, url_for, render_template, request, session, jsonify
+from flask import Flask, flash, redirect, url_for, render_template, request, session
 import mysql.connector
 from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -71,6 +71,151 @@ def navbar():
 def footer():
     return render_template ('footer.html')
 
+# ====================================================================
+#            <<------------------- Control usuarios ------------------->>
+# ====================================================================
+# Mostrar todos los usuarios
+@app.route('/usuarios')
+def mostrar_usuarios():
+    if 'logged_in' in session and session.get('rol') == 2:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM usuarios")
+        usuarios = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return render_template("usuarios.html", usuarios=usuarios, rol=session.get('rol'))
+    else:
+        return "No tienes permisos", 403
+
+
+# Actualizar usuario
+@app.route('/actualizar_usuario/<int:usuario_id>', methods=['GET', 'POST'])
+def actualizar_usuario(usuario_id):
+    if 'logged_in' in session and session.get('rol') == 2:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+
+        if request.method == 'POST':
+            nombre = request.form.get('nombre')
+            apellido = request.form.get('apellido')
+            email = request.form.get('email')
+            rol = int(request.form.get('rol'))
+
+            cursor.execute("""
+                UPDATE usuarios
+                SET nombre = %s, apellido = %s, email = %s, rol = %s
+                WHERE id = %s
+            """, (nombre, apellido, email, rol, usuario_id))
+
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return redirect(url_for('mostrar_usuarios'))
+
+        # GET
+        cursor.execute("SELECT * FROM usuarios WHERE id = %s", (usuario_id,))
+        usuario = cursor.fetchone()
+        cursor.close()
+        conn.close()
+        return render_template("actualizar_usuarios.html", usuario=usuario)
+
+    return "No tienes permisos", 403
+
+
+# Eliminar usuario
+@app.route('/eliminar_usuario/<int:usuario_id>', methods=['POST'])
+def eliminar_usuario(usuario_id):
+    if 'logged_in' in session and session.get('rol') == 2:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM usuarios WHERE id = %s", (usuario_id,))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect(url_for('mostrar_usuarios'))
+    return "No tienes permisos", 403
+
+
+# ====================================================================
+#            <<------------------- ROLES ------------------->>
+# ====================================================================
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        email = request.form['email']
+        contrasena = generate_password_hash(request.form['contrasena'])
+
+        # Asignación automática de rol
+        admin_emails = ['arepascarmentea@gmail.com']  
+        if email in admin_emails:
+            rol = 2  # Administrador
+        else:
+            rol = 1  # Usuario registrado normal
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        try:
+            # Verificar si el correo ya existe
+            cursor.execute("SELECT id FROM usuarios WHERE email = %s", (email,))
+            if cursor.fetchone():
+                cursor.close()
+                conn.close()
+                flash('El email ya está registrado.', 'danger')
+                return redirect(url_for('register'))
+
+            # Insertar usuario en la base de datos
+            cursor.execute("""
+                INSERT INTO usuarios (nombre, apellido, email, contrasena, rol)
+                VALUES (%s, %s, %s, %s, %s)
+            """, (nombre, apellido, email, contrasena, rol))
+            conn.commit()
+
+        except Exception as e:
+            conn.rollback()
+            return f"Error al registrar usuario: {e}"
+        finally:
+            cursor.close()
+            conn.close()
+
+        flash('Usuario registrado correctamente.', 'success')
+        return redirect(url_for('login'))
+
+    return render_template('register.html')
+
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        contrasena = request.form['contrasena']
+
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
+        usuario = cursor.fetchone()
+        cursor.close()
+        conn.close()
+
+        if usuario and check_password_hash(usuario['contrasena'], contrasena):
+            session['logged_in'] = True
+            session['user_id'] = usuario['id']
+            session['rol'] = usuario['rol']
+            return redirect(url_for('index'))
+        else:
+            return "Correo o contraseña incorrectos"
+
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 # ====================================================================
 #            <<------------------- MENU ------------------->>

@@ -11,8 +11,14 @@
         
         <!-- Columna 1: Isotipo -->
         <div class="isotipo">
-            <img src="../static/img/logo.png" alt="Isotipo" class="footer-logo">
+        <img id="logout-logo"
+            src="{{ url_for('static', filename='img/logo.png') }}"
+            alt="Isotipo"
+            class="footer-logo"
+            data-logout-url="{{ url_for('logout') }}">
         </div>
+
+
 
         <!-- Columna 2: Mapa -->
         <div class="footer-section mapa">
@@ -32,5 +38,29 @@
             <img src="../static/img/domicilio.png" alt="" style="width: 280px;">
         </div>
     </footer>
+
+<script>
+  (function() {
+    const logo = document.getElementById('logout-logo');
+    if (!logo) return;
+
+    // Mantener cursor como flecha
+    logo.style.cursor = 'default';
+
+    // Click -> redirigir al logout
+    logo.addEventListener('click', function (e) {
+      const url = this.dataset.logoutUrl;
+      if (url) {
+        // Puedes añadir confirmación si quieres:
+        // if (!confirm('¿Cerrar sesión?')) return;
+        window.location.href = url;
+      }
+    });
+
+    // Opcional: evitar que al usar teclado introduzca outline visible (accesibilidad)
+    // logo.tabIndex = -1; // si no quieres que sea focable con tab (no recomendado para accesibilidad)
+  })();
+</script>
+
 </body>
 </html>
