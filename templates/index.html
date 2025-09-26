@@ -11,60 +11,78 @@
 
     <main class="menu-container">
 
-        <!-- AREPAS -->
+        <!-- AREPAS (categoria 1) -->
         <h2>Arepas</h2>
         <div class="menu-grid">
-            {% for menu in arepas %}
+            {% for menu in menus %}
+            {% if menu.categoria == 1 %}
             <div class="menu-item">
                 <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
                 <h3>{{ menu.titulo }}</h3>
                 <p>{{ menu.descripcion }}</p>
                 <span class="price">${{ "{:,}".format(menu.precio) }}</span>
+                
+                {% if rol == 2 %}
                 <div class="menu-actions">
                     <a href="{{ url_for('actualizar_menu', menu_id=menu.id) }}">Actualizar</a>
                     <form action="{{ url_for('eliminar_menu', menu_id=menu.id) }}" method="POST" style="display:inline;">
                         <button type="submit">Eliminar</button>
                     </form>
                 </div>
+                {% endif %}
+                
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 
-        <!-- COMBOS -->
+        <!-- COMBOS (categoria 2) -->
         <h2>Combos</h2>
         <div class="menu-grid">
-            {% for menu in combos %}
-            <div class="menu-menu">
+            {% for menu in menus %}
+            {% if menu.categoria == 2 %}
+            <div class="menu-item">
                 <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
                 <h3>{{ menu.titulo }}</h3>
                 <p>{{ menu.descripcion }}</p>
                 <span class="price">${{ "{:,}".format(menu.precio) }}</span>
+                
+                {% if rol == 2 %}
                 <div class="menu-actions">
                     <a href="{{ url_for('actualizar_menu', menu_id=menu.id) }}">Actualizar</a>
                     <form action="{{ url_for('eliminar_menu', menu_id=menu.id) }}" method="POST" style="display:inline;">
                         <button type="submit">Eliminar</button>
                     </form>
                 </div>
+                {% endif %}
+                
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 
-        <!-- ADICIONES -->
+        <!-- ADICIONES (categoria 3) -->
         <h2>Adiciones</h2>
         <div class="menu-grid">
-            {% for menu in adiciones %}
-            <div class="menu-menu">
+            {% for menu in menus %}
+            {% if menu.categoria == 3 %}
+            <div class="menu-item">
                 <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
                 <h3>{{ menu.titulo }}</h3>
                 <p>{{ menu.descripcion }}</p>
                 <span class="price">${{ "{:,}".format(menu.precio) }}</span>
+                
+                {% if rol == 2 %}
                 <div class="menu-actions">
                     <a href="{{ url_for('actualizar_menu', menu_id=menu.id) }}">Actualizar</a>
                     <form action="{{ url_for('eliminar_menu', menu_id=menu.id) }}" method="POST" style="display:inline;">
                         <button type="submit">Eliminar</button>
                     </form>
                 </div>
+                {% endif %}
+                
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 

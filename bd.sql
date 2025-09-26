@@ -12,17 +12,11 @@ CREATE TABLE IF NOT EXISTS usuarios (
     rol TINYINT NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS categorias (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS menu (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     descripcion TEXT NULL,
     precio INT NOT NULL,
     imagen VARCHAR(255) NOT NULL,
-    categoria_id INT NOT NULL,
-    FOREIGN KEY (categoria_id) REFERENCES categorias(id)
+    categoria TINYINT NOT NULL
 );
