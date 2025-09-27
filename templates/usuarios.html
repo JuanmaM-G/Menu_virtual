@@ -12,47 +12,34 @@
     <main class="users-container">
         <h1>Usuarios Registrados</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Email</th>
-                    <th>Rol</th>
-                    {% if rol == 2 %}
-                    <th>Acciones</th>
+        <div class="usuarios-lista">
+            {% for usuario in usuarios %}
+            <div class="usuario-card">
+                <p><strong>ID:</strong> {{ usuario.id }}</p>
+                <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+                <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+                <p><strong>Email:</strong> {{ usuario.email }}</p>
+                <p><strong>Rol:</strong> 
+                    {% if usuario.rol == 1 %}
+                        Usuario
+                    {% elif usuario.rol == 2 %}
+                        Administrador
+                    {% else %}
+                        No registrado
                     {% endif %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for usuario in usuarios %}
-                <tr>
-                    <td>{{ usuario.id }}</td>
-                    <td>{{ usuario.nombre }}</td>
-                    <td>{{ usuario.apellido }}</td>
-                    <td>{{ usuario.email }}</td>
-                    <td>
-                        {% if usuario.rol == 1 %}
-                            Usuario
-                        {% elif usuario.rol == 2 %}
-                            Administrador
-                        {% else %}
-                            No registrado
-                        {% endif %}
-                    </td>
-                    {% if rol == 2 %}
-                    <td>
-                        <a href="{{ url_for('actualizar_usuario', usuario_id=usuario.id) }}">Actualizar</a>
-                        <form action="{{ url_for('eliminar_usuario', usuario_id=usuario.id) }}" method="POST" style="display:inline;">
-                            <button type="submit">Eliminar</button>
-                        </form>
-                    </td>
-                    {% endif %}
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </p>
+
+                {% if rol == 2 %}
+                <div class="acciones">
+                    <a href="{{ url_for('actualizar_usuario', usuario_id=usuario.id) }}" class="btn-editar">Actualizar</a>
+                    <form action="{{ url_for('eliminar_usuario', usuario_id=usuario.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este usuario?');">
+                        <button type="submit" class="btn-eliminar">Eliminar</button>
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
     </main>
 
     {% include 'footer.html' %}

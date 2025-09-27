@@ -12,12 +12,14 @@
     <main class="menu-container">
 
         <!-- AREPAS (categoria 1) -->
-        <h2>Arepas</h2>
+        <h2>AREPAS</h2>
         <div class="menu-grid">
             {% for menu in menus %}
             {% if menu.categoria == 1 %}
             <div class="menu-item">
-                <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                </div>
                 <h3>{{ menu.titulo }}</h3>
                 <p>{{ menu.descripcion }}</p>
                 <span class="price">${{ "{:,}".format(menu.precio) }}</span>
@@ -30,19 +32,20 @@
                     </form>
                 </div>
                 {% endif %}
-                
             </div>
             {% endif %}
             {% endfor %}
         </div>
 
         <!-- COMBOS (categoria 2) -->
-        <h2>Combos</h2>
+        <h2>COMBOS</h2>
         <div class="menu-grid">
             {% for menu in menus %}
             {% if menu.categoria == 2 %}
             <div class="menu-item">
-                <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                </div>
                 <h3>{{ menu.titulo }}</h3>
                 <p>{{ menu.descripcion }}</p>
                 <span class="price">${{ "{:,}".format(menu.precio) }}</span>
@@ -55,19 +58,20 @@
                     </form>
                 </div>
                 {% endif %}
-                
             </div>
             {% endif %}
             {% endfor %}
         </div>
 
         <!-- ADICIONES (categoria 3) -->
-        <h2>Adiciones</h2>
+        <h2>ADICIONES</h2>
         <div class="menu-grid">
             {% for menu in menus %}
             {% if menu.categoria == 3 %}
             <div class="menu-item">
-                <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='uploads/' ~ menu.imagen) }}" alt="{{ menu.titulo }}">
+                </div>
                 <h3>{{ menu.titulo }}</h3>
                 <p>{{ menu.descripcion }}</p>
                 <span class="price">${{ "{:,}".format(menu.precio) }}</span>
@@ -80,7 +84,6 @@
                     </form>
                 </div>
                 {% endif %}
-                
             </div>
             {% endif %}
             {% endfor %}

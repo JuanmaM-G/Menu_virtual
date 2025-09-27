@@ -146,3 +146,201 @@ nav a:hover {
 .isotipo a:hover {
     cursor: default;
 }
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* === CELULARES (max-width: 600px) === */
+@media (max-width: 600px) {
+    .header-top {
+        flex-direction: column;
+        padding: 5vw;
+    }
+
+    .header-top .logo,
+    .header-top .header-image {
+        flex: 100%;
+        margin-bottom: 3vw;
+    }
+
+    .header-top .logo img,
+    .header-top .header-image img {
+        width: 80%;
+        height: auto;
+    }
+
+    nav a {
+        padding: 3vw 4vw;
+        font-size: 4vw;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 4vw;
+        padding: 5vw 2vw;
+    }
+
+    .isotipo img {
+        max-width: 50%;
+        max-height: auto;
+    }
+
+    .footer iframe {
+        width: 90%;
+        height: 150px;
+        padding-bottom: 20px;
+    }
+
+    .footer p {
+        font-size: 3.5vw;
+    }
+
+    .footer h3 {
+        font-size: 11vw;
+    }
+}
+
+/* === TABLETS (601px - 900px) === */
+@media (min-width: 601px) and (max-width: 900px) {
+    .header-top {
+        flex-direction: row;
+        padding: 4vw;
+    }
+
+    .header-top .logo,
+    .header-top .header-image {
+        flex: 50%;
+    }
+
+    .header-top .logo img,
+    .header-top .header-image img {
+        width: 90%;
+        height: auto;
+    }
+
+    nav a {
+        padding: 2.5vw 3vw;
+        font-size: 3vw;
+    }
+
+    .footer {
+        flex-direction: row;
+        gap: 3vw;
+        padding: 4vw 3vw;
+    }
+
+    .isotipo img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .footer iframe {
+        width: 85%;
+        height: 160px;
+    }
+
+    .footer p {
+        font-size: 2.8vw;
+    }
+
+    .footer h3 {
+        font-size: 5.3vw;
+    }
+}
+
+/* === LAPTOPS (901px - 1200px) === */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .header-top {
+        flex-direction: row;
+        padding: 3vw;
+    }
+
+    .header-top .logo,
+    .header-top .header-image {
+        flex: 50%;
+    }
+
+    .header-top .logo img,
+    .header-top .header-image img {
+        width: 95%;
+        height: auto;
+    }
+
+    nav a {
+        padding: 1.5vw 2vw;
+        font-size: 2vw;
+    }
+
+    .footer {
+        flex-direction: row;
+        gap: 2vw;
+        padding: 3vw 2vw;
+    }
+
+    .isotipo img {
+        max-width: 180px;
+        max-height: 180px;
+    }
+
+    .footer iframe {
+        width: 80%;
+        height: 170px;
+    }
+
+    .footer p {
+        font-size: 1.8vw;
+    }
+
+    .footer h3 {
+        font-size: 5vw;
+    }
+}
+
+/* === COMPUTADORES (min-width: 1201px) === */
+@media (min-width: 1201px) {
+    .header-top {
+        flex-direction: row;
+        padding: 2vw 3vw;
+    }
+
+    .header-top .logo,
+    .header-top .header-image {
+        flex: 50%;
+    }
+
+    .header-top .logo img,
+    .header-top .header-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    nav a {
+        padding: 1vw 1.5vw;
+        font-size: 1.5vw;
+    }
+
+    .footer {
+        flex-direction: row;
+        gap: 1.5vw;
+        padding: 2vw 2vw;
+    }
+
+    .isotipo img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .footer iframe {
+        width: 80%;
+        height: 170px;
+    }
+
+    .footer p {
+        font-size: 1.2vw;
+    }
+
+    .footer h3 {
+        font-size: 4vw;
+    }
+}

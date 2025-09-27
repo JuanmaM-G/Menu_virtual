@@ -3,6 +3,7 @@
    =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=ChunkFiveEx&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aliens+and+Cows&display=swap'); /* Para subtítulos y botones */
 
 /* ===========================
    BODY
@@ -39,53 +40,6 @@ h1 {
 }
 
 /* ===========================
-   Tabla de usuarios
-   =========================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-table th,
-table td {
-    padding: 12px 15px;
-    border: 1px solid #4D1B00;
-    text-align: left;
-    background-color: #ffffff; /* color principal claro */
-    color: #4D1B00; /* texto principal */
-}
-
-table th {
-    background-color: #E35110; /* color principal */
-    color: #F2BA5C; /* texto claro */ 
-}
-
-/* Enlaces y botones dentro de la tabla */
-table a,
-table button {
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    margin-right: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-table a {
-    background-color: #4D1B00;
-    color: #F2BA5C;
-}
-
-table button {
-    background-color: #E35110;
-    color: #F2BA5C;
-}
-
-/* ===========================
    Formulario de usuarios
    =========================== */
 .form-container form {
@@ -101,7 +55,7 @@ table button {
     margin-bottom: 5px;
     font-weight: 600;
     display: block;
-    font-family: 'aliens and Cows', cursive;
+    font-family: 'Aliens and Cows', cursive;
     font-size: 1.1rem;
     color: #4D1B00;
 }
@@ -155,22 +109,242 @@ table button {
 }
 
 /* ===========================
-   Responsive
+   USUARIOS - CARDS
    =========================== */
-@media (max-width: 768px) {
+.usuarios-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.usuario-card {
+    background-color: #ffffff; /* color complementario suave */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.usuario-card p {
+    margin: 4px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #4D1B00;
+}
+
+.usuario-card strong {
+    color: #E35110; /* destacar etiquetas */
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.acciones a,
+.acciones button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Aliens and Cows', cursive;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.acciones a {
+    background-color: #4D1B00;
+    color: #F2BA5C;
+    text-align: center;
+}
+
+.acciones a:hover {
+    background-color: #6B2100;
+}
+
+.acciones button {
+    background-color: #E35110;
+    color: #F2BA5C;
+}
+
+.acciones button:hover {
+    background-color: #B71600;
+}
+
+
+
+
+/* ===========================
+    RESPONSIVE
+   =========================== */
+
+/* ===========================
+   RESPONSIVE GENERAL
+   =========================== */
+
+/* === CELULARES (max-width: 600px) === */
+@media (max-width: 600px) {
     .users-container,
     .form-container {
-        margin: 20px;
-        padding: 15px;
+        width: 90%;
+        margin: 5vw auto;
+        padding: 5vw;
     }
 
-    table th,
-    table td {
-        padding: 8px 10px;
+    h1 {
+        font-size: 6vw;
+        margin-bottom: 5vw;
+    }
+
+    .form-container label {
+        font-size: 4vw;
+        margin-bottom: 2vw;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        padding: 3vw;
+        font-size: 3.5vw;
     }
 
     .form-container .form-buttons {
         flex-direction: column;
-        align-items: stretch;
+        gap: 3vw;
+    }
+
+    .form-container .form-buttons button,
+    .form-container .form-buttons .back-button {
+        font-size: 4vw;
+        padding: 3vw 0;
+    }
+
+    .usuarios-lista {
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+
+    .usuario-card {
+        padding: 4vw;
+        font-size: 3.5vw;
+    }
+
+    .acciones a,
+    .acciones button {
+        font-size: 3.5vw;
+        padding: 3vw 2vw;
+    }
+}
+
+/* === TABLETS (601px - 900px) === */
+@media (min-width: 601px) and (max-width: 900px) {
+    .users-container,
+    .form-container {
+        width: 80%;
+        margin: 4vw auto;
+        padding: 4vw;
+    }
+
+    h1 {
+        font-size: 5vw;
+        margin-bottom: 4vw;
+    }
+
+    .form-container label {
+        font-size: 3vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        padding: 2.5vw;
+        font-size: 3vw;
+    }
+
+    .form-container .form-buttons {
+        flex-direction: row;
+        gap: 2.5vw;
+    }
+
+    .form-container .form-buttons button,
+    .form-container .form-buttons .back-button {
+        font-size: 3vw;
+        padding: 2.5vw 0;
+    }
+
+    .usuarios-lista {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5vw;
+    }
+
+    .usuario-card {
+        padding: 3vw;
+        font-size: 3vw;
+    }
+
+    .acciones a,
+    .acciones button {
+        font-size: 3vw;
+        padding: 2.5vw 2vw;
+    }
+}
+
+/* === LAPTOPS (901px - 1200px) === */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .users-container,
+    .form-container {
+        width: 70%;
+        margin: 3vw auto;
+        padding: 3vw;
+    }
+
+    h1 {
+        font-size: 3.5vw;
+        margin-bottom: 3vw;
+    }
+
+    .form-container label {
+        font-size: 2.2vw;
+        margin-bottom: 1vw;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        padding: 2vw;
+        font-size: 2.2vw;
+    }
+
+    .form-container .form-buttons {
+        flex-direction: row;
+        gap: 2vw;
+    }
+
+    .form-container .form-buttons button,
+    .form-container .form-buttons .back-button {
+        font-size: 2.2vw;
+        padding: 2vw 0;
+    }
+
+    .usuarios-lista {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2vw;
+    }
+
+    .usuario-card {
+        padding: 2.5vw;
+        font-size: 1rem;
+    }
+
+    .acciones a,
+    .acciones button {
+        font-size: 1rem;
+        padding: 1.2vw 1vw;
     }
 }

@@ -87,3 +87,90 @@ button:hover {
     color: #B71600;
     text-decoration: underline;
 }
+
+/* ==============================
+RESPONSIVE
+==============================  */
+/* === CELULARES (max-width: 600px) === */
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        margin: 10vw auto;
+        padding: 6vw;
+    }
+
+    h1 {
+        font-size: 6vw;
+        margin-bottom: 4vw;
+    }
+
+    label {
+        font-size: 3.5vw;
+    }
+
+    input, select, button {
+        padding: 3vw;
+        font-size: 3.5vw;
+    }
+
+    .form-buttons a {
+        font-size: 3.5vw;
+        margin-top: 3vw;
+    }
+}
+
+/* === TABLETS (601px - 900px) === */
+@media (min-width: 601px) and (max-width: 900px) {
+    .form-container {
+        width: 80%;
+        margin: 8vw auto;
+        padding: 5vw;
+    }
+
+    h1 {
+        font-size: 5vw;
+        margin-bottom: 3.5vw;
+    }
+
+    label {
+        font-size: 3vw;
+    }
+
+    input, select, button {
+        padding: 2.5vw;
+        font-size: 3vw;
+    }
+
+    .form-buttons a {
+        font-size: 3vw;
+        margin-top: 2.5vw;
+    }
+}
+
+/* === LAPTOPS (901px - 1200px) === */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .form-container {
+        width: 60%;
+        margin: 6vw auto;
+        padding: 4vw;
+    }
+
+    h1 {
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    label {
+        font-size: 2.5vw;
+    }
+
+    input, select, button {
+        padding: 2vw;
+        font-size: 2.5vw;
+    }
+
+    .form-buttons a {
+        font-size: 2.5vw;
+        margin-top: 2vw;
+    }
+}

@@ -78,6 +78,7 @@ body {
 /* Input tipo archivo */
 .form-input-file {
     width: 100%;
+    max-width: 100%; 
     padding: 10px 12px;
     border: 1px solid #4D1B00;
     border-radius: 6px;
@@ -85,7 +86,9 @@ body {
     cursor: pointer;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1rem;
+    box-sizing: border-box;
 }
+
 
 .form-input-file::file-selector-button {
     font-family: 'Josefin Sans', sans-serif;
@@ -140,3 +143,136 @@ body {
 .back-button:hover {
     background-color: #6B2100;
 }
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* === CELULARES (max-width: 600px) === */
+@media (max-width: 600px) {
+    #menu-main {
+        padding: 5vw 3vw;
+    }
+
+    #menu-form-container {
+        width: 90%;
+        padding: 6vw;
+    }
+
+    #menu-form-title {
+        font-size: 6vw;
+        margin-bottom: 5vw;
+    }
+
+    .form-label {
+        font-size: 4vw;
+        margin-bottom: 2vw;
+    }
+
+    .form-input,
+    .form-input-file {
+        padding: 3vw 3vw;
+        font-size: 3.5vw;
+    }
+
+    .form-input-file::file-selector-button {
+        padding: 2.5vw 3vw;
+        font-size: 3.5vw;
+    }
+
+    .form-button {
+        font-size: 4vw;
+        padding: 3vw 0;
+    }
+
+    .form-buttons {
+        gap: 3vw;
+        flex-direction: column;
+    }
+}
+
+/* === TABLETS (601px - 900px) === */
+@media (min-width: 601px) and (max-width: 900px) {
+    #menu-main {
+        padding: 4vw 4vw;
+    }
+
+    #menu-form-container {
+        width: 80%;
+        padding: 5vw;
+    }
+
+    #menu-form-title {
+        font-size: 5vw;
+        margin-bottom: 4vw;
+    }
+
+    .form-label {
+        font-size: 3.5vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .form-input,
+    .form-input-file {
+        padding: 2.5vw 2.5vw;
+        font-size: 3vw;
+    }
+
+    .form-input-file::file-selector-button {
+        padding: 2vw 2.5vw;
+        font-size: 3vw;
+    }
+
+    .form-button {
+        font-size: 3.5vw;
+        padding: 2.5vw 0;
+    }
+
+    .form-buttons {
+        gap: 2.5vw;
+        flex-direction: row;
+    }
+}
+
+/* === LAPTOPS (901px - 1200px) === */
+@media (min-width: 901px) and (max-width: 1200px) {
+    #menu-main {
+        padding: 3vw 3vw;
+    }
+
+    #menu-form-container {
+        width: 60%;
+        padding: 4vw;
+    }
+
+    #menu-form-title {
+        font-size: 4vw;
+        margin-bottom: 3vw;
+    }
+
+    .form-label {
+        font-size: 2.5vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .form-input,
+    .form-input-file {
+        padding: 2vw 2vw;
+        font-size: 2.5vw;
+    }
+
+    .form-input-file::file-selector-button {
+        padding: 1.8vw 2vw;
+        font-size: 2.5vw;
+    }
+
+    .form-button {
+        font-size: 2.5vw;
+        padding: 2vw 0;
+    }
+
+    .form-buttons {
+        gap: 2vw;
+        flex-direction: row;
+    }
+}
+
